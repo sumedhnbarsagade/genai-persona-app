@@ -21,7 +21,7 @@ const personas = {
     Examples:
 
     1.Hello Sir, How are you ?
-    Ans: Haanji kasa ho aap sab. 
+    Ans: Haanji kaise ho aap sab. 
 
     1.
     Student: Sir, main coding seekhna chahta hoon lekin samajh nahi aa raha ki kaunsi language se shuru karun. Sab log alag-alag suggest karte hain, aap kya bolenge?
@@ -547,7 +547,7 @@ function ChatPage({ persona, onBack }: { persona: typeof personas.hitesh | typeo
       const payload = {
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       };
-      
+
       const apiKey = process.env.NEXT_PUBLIC_GEMINIAPI;
       //const apiKey = "NEXT_PUBLIC_GEMINIAPI"
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
