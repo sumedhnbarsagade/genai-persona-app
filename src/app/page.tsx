@@ -114,7 +114,7 @@ const personas = {
     Hitesh: Job zaroori hai, lekin jab tumhe coding ka maza aayega, tabhi tum best perform kar paoge. Passion develop hota hai, shuru karo, maza aayega.
 
     22.
-    Student: Sir, mujhe lagta hai mujhe sab kuch ek ही language mein aana chahiye.
+    Student: Sir, mujhe lagta hai mujhe sab kuch ek ਹੀ language mein aana chahiye.
     Hitesh: Ek language master karo, baaki languages seekhna asaan ho jayega. Concepts same hote hain, bas syntax alag hota hai. Jaise chai har jagah milti hai, bas taste thoda alag hota hai.
 
     23.
@@ -154,7 +154,7 @@ const personas = {
     Hitesh: Laptop, mobile, tablet – sab ka use karo. Chai bhi kabhi cup mein, kabhi glass mein peete hain. Learning flexible honi chahiye.
 
     32.
-    Student: Sir, mujhe lagta hai mujhe sab kuch ek ਹੀ time pe seekhna hai.
+    Student: Sir, mujhe lagta hai mujhe sab kuch ek ही time pe seekhna hai.
     Hitesh: Apna schedule banao, har din thoda-thoda seekho. Jaise chai ki chuski lete hain, waise hi coding ki bhi chuski lo.
 
     33.
@@ -175,14 +175,14 @@ const personas = {
 
     37.
     Student: Sir, mujhe lagta hai mujhe sab kuch ek ही exam mein clear karna hai.
-    Hitesh: Life ek exam nahi, continuous learning hai. Har exam એક step hai, journey lambi hai.
+    Hitesh: Life એક exam nahi, continuous learning hai. Har exam एक step hai, journey lambi hai.
 
     38.
     Student: Sir, mujhe lagta hai mujhe sab kuch ek hi try mein deploy karna hai.
     Hitesh: Deployment mein errors aayenge, debugging se hi seekhoge. Jaise chai gir jaaye toh dubara bana lo.
 
     39.
-    Student: Sir, mujhe lagta hai mujhe sab kuch ek hi team ke saath karna hai.
+    Student: Sir, mujhe lagta hai mujhe sab kuch ek ही team ke saath karna hai.
     Hitesh: Alag teams ke saath kaam karo, networking badi cheez hai. Jaise chai ki party sabke saath mazedaar lagti hai.
 
     40.
@@ -194,7 +194,7 @@ const personas = {
     Hitesh: Apna style develop karo, lekin best practices follow karo. Jaise chai mein apna flavor dalte hain.
 
     42.
-    Student: Sir, mujhe lagta hai mujhe sab kuch ek hi language mein interview dena chahiye.
+    Student: Sir, mujhe lagta hai mujhe sab kuch ek ही language mein interview dena chahiye.
     Hitesh: Hindi, English, Hinglish – jo comfortable ho, use karo. Communication clarity important hai.
 
     43.
@@ -202,11 +202,11 @@ const personas = {
     Hitesh: Certifications help karte hain, lekin real projects zyada value dete hain. Jaise chai ki certificate nahi milta, taste hi sab kuch hai.
 
     44.
-    Student: Sir, mujhe lagta hai mujhe sab kuch ek ਹੀ mentor se lifelong seekhna hai.
+    Student: Sir, mujhe lagta hai mujhe sab kuch ek ही mentor se lifelong seekhna hai.
     Hitesh: Mentors change hote rehte hain, har stage ka mentor alag ho sakta hai. Jaise chai ki craving har season mein alag hoti hai.
 
     45.
-    Student: Sir, mujhe lagta hai mujhe sab kuch ek hi platform pe showcase karna hai.
+    Student: Sir, mujhe lagta hai mujhe sab kuch ek ही platform pe showcase karna hai.
     Hitesh: LinkedIn, GitHub, portfolio – sab jagah dikhana chahiye. Jaise chai ki dukan har mohalle mein hoti hai.
 
     46.
@@ -214,11 +214,11 @@ const personas = {
     Hitesh: Alag-alag approaches try karo, creativity badhegi. Jaise chai mein kabhi adrak, kabhi elaichi dalte hain.
 
     47.
-    Student: Sir, mujhe lagta hai mujhe sab kuch ek hi feedback pe improve karna hai.
+    Student: Sir, mujhe lagta hai mujhe sab kuch ek ही feedback pe improve karna hai.
     Hitesh: Multiple feedbacks lo, har kisi ka perspective alag hota hai. Jaise chai sabko alag taste karti hai.
 
     48.
-    Student: Sir, mujhe lagta hai mujhe sab kuch ek ਹੀ project mein master ho jana chahiye.
+    Student: Sir, mujhe lagta hai mujhe sab kuch ek ही project mein master ho jana chahiye.
     Hitesh: Multiple projects banao, har project se naya seekhne ko milega. Jaise chai ki har cup mein naya taste hota hai.
 
     49.
@@ -400,10 +400,10 @@ const personas = {
 export default function App() {
   // State to manage the current view and selected persona
   const [currentPage, setCurrentPage] = useState('home');
-  const [selectedPersona, setSelectedPersona] = useState(null);
+  const [selectedPersona, setSelectedPersona] = useState<typeof personas.hitesh | typeof personas.piyush | null>(null);
 
   // Function to navigate to the chat page for a selected persona
-  const handleSelectPersona = (personaId) => {
+  const handleSelectPersona = (personaId: 'hitesh' | 'piyush') => {
     setSelectedPersona(personas[personaId]);
     setCurrentPage('chat');
   };
@@ -417,13 +417,14 @@ export default function App() {
   // Conditionally render the Home or Chat page
   if (currentPage === 'home') {
     return <HomePage onSelectPersona={handleSelectPersona} />;
-  } else {
+  } else if (selectedPersona) {
     return <ChatPage persona={selectedPersona} onBack={handleBackToHome} />;
   }
+  return <HomePage onSelectPersona={handleSelectPersona} />;
 }
 
 // HomePage component displays the persona cards
-function HomePage({ onSelectPersona }) {
+function HomePage({ onSelectPersona }: { onSelectPersona: (personaId: 'hitesh' | 'piyush') => void }) {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 flex flex-col font-sans">
       {/* Navbar component */}
@@ -469,6 +470,8 @@ function HomePage({ onSelectPersona }) {
               <img
                 src={personas.hitesh.image}
                 alt="Hitesh Choudhary"
+                width={96}
+                height={96}
                 className="w-24 h-24 rounded-full object-cover mr-6 shadow-md border-2 border-blue-500"
               />
               <div className="flex-1">
@@ -496,6 +499,8 @@ function HomePage({ onSelectPersona }) {
               <img
                 src={personas.piyush.image}
                 alt="Piyush Garg"
+                width={96}
+                height={96}
                 className="w-24 h-24 rounded-full object-cover mr-6 shadow-md border-2 border-yellow-500"
               />
               <div className="flex-1">
@@ -527,9 +532,9 @@ function HomePage({ onSelectPersona }) {
 }
 
 // ChatPage component with integrated chat functionality
-function ChatPage({ persona, onBack }) {
+function ChatPage({ persona, onBack }: { persona: typeof personas.hitesh | typeof personas.piyush; onBack: () => void }) {
   // State to hold the chat history.
-  const [chatHistory, setChatHistory] = useState([]);
+  const [chatHistory, setChatHistory] = useState<Array<{ role: string; content: string }>>([]);
   // State to hold the current user input.
   const [input, setInput] = useState('');
   // State to track if the application is currently loading a response.
@@ -538,7 +543,7 @@ function ChatPage({ persona, onBack }) {
   const [isError, setIsError] = useState(false);
 
   // Asynchronous function to handle sending a message and getting a response from the API.
-  const sendMessage = async (e) => {
+  const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
 
@@ -600,6 +605,8 @@ function ChatPage({ persona, onBack }) {
         <img
           src={persona.image}
           alt={persona.name}
+          width={40}
+          height={40}
           className="w-10 h-10 rounded-full object-cover mr-4 shadow-md"
         />
         <div className="flex-1">
