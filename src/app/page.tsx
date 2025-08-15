@@ -425,14 +425,14 @@ function HomePage({ onSelectPersona }: { onSelectPersona: (personaId: 'hitesh' |
       <nav className="flex items-center justify-between p-6 bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-10">
         <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">Persona Chat</h1>
         <div className="flex space-x-6 text-sm font-medium text-gray-600 dark:text-gray-400">
-          <a href="https://www.linkedin.com/in/piyushgarg195/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors duration-200">
+          <a href="www.linkedin.com/in/sumedh-barsagade" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors duration-200">
             LinkedIn
           </a>
-          <a href="https://github.com/piyushgarg-dev" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors duration-200">
+          <a href="https://github.com/sumedhnbarsagade/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors duration-200">
             GitHub
           </a>
-          <a href="https://www.piyushgarg.dev/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors duration-200">
-            Portfolio
+          <a href="https://x.com/SumedhBars47238?s=08" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors duration-200">
+            Twitter
           </a>
         </div>
       </nav>
@@ -447,7 +447,7 @@ function HomePage({ onSelectPersona }: { onSelectPersona: (personaId: 'hitesh' |
             Pick a persona and start a conversation. Get practical advice, learn new concepts, and accelerate your journey to becoming a pro developer.
           </p>
           <div className="flex justify-center space-x-4 animate-fade-in-delay-2">
-            <a href="https://www.youtube.com/@piyushgargdev" target="_blank" rel="noopener noreferrer" className="bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-700 transition-colors duration-300">
+            <a href="https://www.youtube.com/@chaiaurcode" target="_blank" rel="noopener noreferrer" className="bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-700 transition-colors duration-300">
               YouTube
             </a>
             <a href="https://www.chaicode.com/" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300">
