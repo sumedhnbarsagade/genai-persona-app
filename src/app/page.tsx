@@ -1,12 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import {
-  ChatBubbleOvalLeftEllipsisIcon,
-  AcademicCapIcon,
-  ShareIcon,
-  CodeBracketIcon
-} from '@heroicons/react/24/solid';
 
 // Define the personas and their details
 const personas = {
