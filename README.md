@@ -20,14 +20,40 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Persona Chat: Your Personal AI Coding Mentor
+This project is a modern, interactive web application that serves as your personal coding mentor. It features two distinct AI personas, Hitesh Choudhary and Piyush Garg, each with a unique teaching style and personality. You can choose a mentor and engage in a conversational chat to get coding advice, solve problems, and stay motivated.
 
-To learn more about Next.js, take a look at the following resources:
+The application is built using Next.js and React, with Tailwind CSS for a sleek and responsive design.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Features
+    Multi-Persona Interaction: Chat with two different AI mentors, each with their own specialized persona, tone, and expertise.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    Hitesh Choudhary Persona: A warm, story-driven mentor who communicates in Hinglish, using relatable analogies and motivational language. He's perfect for beginners and those who need a friendly push.
+
+    Piyush Garg Persona: A direct, action-oriented coach who focuses on practical, industry-relevant advice. He's an expert in the MERN stack, dedicated to helping you become job-ready with a "code-from-scratch-to-prod" mindset.
+
+    Seamless Chat Interface: A clean, modern chat UI built with React and Tailwind CSS that provides a smooth and intuitive user experience.
+
+    Responsive Design: The application is fully responsive and looks great on all devices, from desktop to mobile.
+
+##Technology Stack
+Framework: Next.js
+
+UI Library: React
+
+Styling: Tailwind CSS
+
+API: Google Gemini API for AI-powered chat functionality
+
+## Getting Started
+# Follow these steps to set up and run the project locally.
+
+Prerequisites
+Node.js (v18 or later)
+
+npm or yarn
+
+
 
 ## Deploy on Vercel
 
