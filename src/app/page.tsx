@@ -519,21 +519,16 @@ function HomePage({ onSelectPersona }: { onSelectPersona: (personaId: 'hitesh' |
       </div>
       {/* Footer */}
       <footer className="p-6 text-center text-sm text-gray-500 dark:text-gray-400">
-        <p>&copy; 2024 Persona Chat. All rights reserved.</p>
+        <p>&copy; 2025 Persona Chat. All rights reserved.</p>
       </footer>
     </div>
   );
 }
 
-// ChatPage component with integrated chat functionality
 function ChatPage({ persona, onBack }: { persona: typeof personas.hitesh | typeof personas.piyush; onBack: () => void }) {
-  // State to hold the chat history.
   const [chatHistory, setChatHistory] = useState<Array<{ role: string; content: string }>>([]);
-  // State to hold the current user input.
   const [input, setInput] = useState('');
-  // State to track if the application is currently loading a response.
   const [isLoading, setIsLoading] = useState(false);
-  // State to track if there was an error with the API call.
   const [isError, setIsError] = useState(false);
 
   // Asynchronous function to handle sending a message and getting a response from the API.
@@ -553,7 +548,8 @@ function ChatPage({ persona, onBack }: { persona: typeof personas.hitesh | typeo
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       };
       
-      const apiKey = "GEMINIAPI"
+      const apiKey = process.env.NEXT_PUBLIC_GEMINIAPI;
+      //const apiKey = "NEXT_PUBLIC_GEMINIAPI"
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
       const response = await fetch(apiUrl, {
