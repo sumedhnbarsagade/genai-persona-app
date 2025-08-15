@@ -554,7 +554,7 @@ function ChatPage({ persona, onBack }) {
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       };
       
-      const apiKey = "AIzaSyCJm9-FMaqCftiTWQbfbFHiVKGQOmZe3IY"; // Canvas will provide this automatically.
+      const apiKey = "GEMINIAPI"
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
       const response = await fetch(apiUrl, {
